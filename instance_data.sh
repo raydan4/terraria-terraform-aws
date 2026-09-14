@@ -45,7 +45,7 @@ Restart=always
 RestartSec=3
 WorkingDirectory=${terraria_root_dir}/${terraria_version}/Linux
 ExecStart=${terraria_root_dir}/${terraria_version}/Linux/TerrariaServer.bin.x86_64 -config server.config
-ExecStop=/bin/bash -c "echo exit > %t/terraria.stdin && sleep 10 && aws s3 cp /opt/terraria/Worlds/Homestead.wld s3://terraria-world-storage/Homestead.wld"
+ExecStop=/bin/bash -c "echo exit > %t/terraria.stdin && sleep 10 && aws s3 cp /opt/terraria/Worlds/${terraria_config_world_name}.wld s3://terraria-world-storage/${terraria_config_world_name}.wld"
 Sockets=minecraft.socket
 StandardInput=socket
 StandardOutput=journal
@@ -69,7 +69,7 @@ Description=Terraria World Backup
 [Service]
 Type=oneshot
 WorkingDirectory=${terraria_root_dir}/${terraria_version}/Linux
-ExecStart=/bin/bash -c "echo save > %t/terraria.stdin && sleep 10 && aws s3 cp /opt/terraria/Worlds/Homestead.wld s3://terraria-world-storage/Homestead.wld"
+ExecStart=/bin/bash -c "echo save > %t/terraria.stdin && sleep 10 && aws s3 cp /opt/terraria/Worlds/${terraria_config_world_name}.wld s3://terraria-world-storage/${terraria_config_world_name}.wld"
 
 [Install]
 WantedBy=multi-user.target
