@@ -1,5 +1,6 @@
 data "aws_ami" "debian_ami" {
     most_recent = true
+    owners = ["aws-marketplace"]
 
     filter {
       name = "name"
