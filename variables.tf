@@ -19,7 +19,7 @@ variable "terraria_root_dir" {
 
 variable "terraria_version" {
   type = number
-  default = 1449
+  default = 1458
 }
 
 variable "authorized_key" {
