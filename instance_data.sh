@@ -11,7 +11,7 @@ chmod -r 600 /home/admin/.ssh
 useradd -r -md ${terraria_root_dir} terraria
 
 pushd ${terraria_root_dir}
-wget wget https://terraria.org/api/download/pc-dedicated-server/terraria-server-${terraria_version}.zip
+wget https://terraria.org/api/download/pc-dedicated-server/terraria-server-${terraria_version}.zip
 unzip terraria-server-${terraria_version}.zip
 chmod 700 ${terraria_version}/Linux/TerrariaServer.bin.x86_64
 mkdir Worlds
