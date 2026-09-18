@@ -70,7 +70,7 @@ resource "aws_iam_instance_profile" "terraria_server_instance_profile" {
 
 resource "aws_instance" "terraria_server" {
   ami = data.aws_ami.debian_ami.id
-  instance_type = "t2.medium"
+  instance_type = "t3.medium"
   associate_public_ip_address = true
   subnet_id = aws_subnet.terraria_subnet.id
 
